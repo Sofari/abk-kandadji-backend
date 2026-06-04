@@ -4,8 +4,6 @@ const knex = require('knex');
 console.log('📍 database.js: création de la connexion knex...');
 
 // Utiliser DATABASE_URL si disponible (production Neon/Render)
-// Sinon utiliser les variables individuelles (développement local)
-
 const connection = process.env.DATABASE_URL 
   ? process.env.DATABASE_URL
   : {
@@ -37,11 +35,7 @@ async function testConnection() {
   }
 }
 
-console.log('📍 database.js: export en cours...');
-
 module.exports = {
   db,
   testConnection,
 };
-
-console.log('📍 database.js: chargé avec succès');
